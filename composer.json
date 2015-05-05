@@ -1,0 +1,26 @@
+{
+	"name": "hypejunction/tincan_viewer",
+	"type": "elgg-plugin",
+	"description": "Courses",
+	"homepage": "http://hypejunction.com",
+	"keywords": [
+		"elgg", "plugin", "elearning", "tincan", "education"
+	],
+	"license": "GPL-2.0",
+	"authors": [
+		{
+			"name": "Ismayil Khayredinov",
+			"email": "ismayil@hypejunction.com"
+		}
+	],
+	"require": {
+		"php": ">=5.3.3",
+		"composer/installers": "1.0.*"
+	},
+	"autoload": {
+		"psr-0": {
+			"": "classes/"
+		}
+	}
+}
+

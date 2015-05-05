@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin_manifest xmlns="http://www.elgg.org/plugin_manifest/1.8">
+    
+	<name>TinCan Package Viewer</name>
+	<id>tincan_viewer</id>
+	<version>1.0.0</version>
+
+	<description>TinCan Package Viewer</description>
+	<category>education</category>
+
+	<author>Ismayil Khayredinov (ismayil@hypejunction.com)</author>
+	<website>http://www.hypeJunction.com</website>
+	<copyright>2015 (c) Ismayil Khayredinov</copyright>
+	<copyright>2015 (c) Bodyology School of Massage</copyright>
+	<license>GNU Public License version 2</license>
+
+	<requires>
+		<type>elgg_release</type>
+		<version>1.10</version>
+	</requires>
+
+	<requires>
+		<type>php_extension</type>
+		<name>zip</name>
+	</requires>
+
+	<suggests>
+		<type>plugin</type>
+		<name>tincan_xapi</name>
+	</suggests>
+
+</plugin_manifest>
