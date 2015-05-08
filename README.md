@@ -13,6 +13,12 @@ This plugin allows you to upload TinCan packages into Elgg, and collect reported
 
 The plugin has been commissioned and sponsored by Bodyology School of Massage.
 
+### Security considerations
+
+* By default, only administrators are allowed to upload packages.
+Use ```'container_permissions_check','object'``` with high priority to change that behaviour.
+* Please consider uploaded packages as a vector for _potential XSS attack_. Only allow uploads by users you trust.
+
 ### Notes
 
 * The plugin has been built for compatibility with Articulate software. Presumably, if TinCan it is what it says it is,
