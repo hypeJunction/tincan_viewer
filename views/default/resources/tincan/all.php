@@ -10,7 +10,6 @@ $title = elgg_echo('tincan:all');
 $content = elgg_list_entities(array(
 	'types' =>'object',
 	'subtypes' => Package::SUBTYPE,
-	'container_guids' => ($container_guid) ?: ELGG_ENTITIES_ANY_VALUE,
 ));
 
 $layout = elgg_view_layout('content', array(
