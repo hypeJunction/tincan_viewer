@@ -16,7 +16,7 @@ elgg_set_page_owner_guid($user->guid);
 elgg_push_breadcrumb(elgg_echo('tincan:all'), 'tincan/all');
 elgg_push_breadcrumb($user->getDisplayName(), "tincan/owner/$user->guid");
 
-if ($user->guid == $viewer->guid) {
+if ($user->guid == $viewer->guid && $user->canWriteToContainer($viewer->guid, 'object', Package::SUBTYPE)) {
 	elgg_register_title_button();
 }
 

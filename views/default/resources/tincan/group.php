@@ -13,7 +13,7 @@ elgg_set_page_owner_guid($container->guid);
 elgg_push_breadcrumb(elgg_echo('tincan:all'), 'tincan/all');
 elgg_push_breadcrumb($container->getDisplayName(), "tincan/group/$container->guid");
 
-if ($user->guid == $viewer->guid) {
+if ($container->canWriteToContainer(0, 'object', Package::SUBTYPE)) {
 	elgg_register_title_button();
 }
 
