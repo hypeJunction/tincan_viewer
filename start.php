@@ -29,6 +29,8 @@ function init() {
 	elgg_register_plugin_hook_handler('state:save', 'tincan', __NAMESPACE__ . '\\save_state');
 	elgg_register_plugin_hook_handler('state:retrieve', 'tincan', __NAMESPACE__ . '\\retrieve_state');
 	elgg_register_plugin_hook_handler('params:endpoint', 'tincan', __NAMESPACE__ . '\\filter_endpoint_params');
+
+	elgg_register_plugin_hook_handler('container_permissions_check', 'object', __NAMESPACE__ . '\\override_container_permissions', 900);
 }
 
 /**

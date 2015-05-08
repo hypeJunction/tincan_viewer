@@ -155,3 +155,37 @@ function filter_endpoint_params($hook, $type, $return, $params) {
 	$return['registration'] = \TinCan\Util::getUUID();
 	return $return;
 }
+
+/**
+ * Override container permissions to only allow administrators to add new packages
+ *
+ * @param string $hook   "contain_permissions_check"
+ * @param string $type   "all"
+ * @param bool   $return Permission
+ * @param array  $params Hook params
+ * @return bool
+ */
+function override_container_permissions($hook, $type, $return, $params) {
+
+	$user = elgg_extract('user', $params);
+	$subtype = elgg_extract('subtype', $params);
+
+	if ($subtype != Package::SUBTYPE) {
+		// Not a TinCan package, proceed normally
+		return $return;
+	}
+
+	if (!$user) {
+		$user = elgg_get_logged_in_user_entity();
+	}
+
+	$user_guid = (int) $user->guid;
+
+	if (elgg_check_access_overrides($user_guid)) {
+		// The user is an admin, or access overrides are in place
+		return true;
+	}
+
+	// Do not allow anyone else to create new packages
+	return false;
+}
